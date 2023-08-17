@@ -4,6 +4,12 @@ const verificationsTableElementId = "verificationsTable";
 const loginElementId = "login";
 const passwordElementId = "password";
 
+const subjectElementId = "subject";
+const testTableElementId = "testTable";
+
+const subjectNewTestElementId = "subjectNewTest";
+const textNewTestElementId = "textNewTest";
+
 const setConnectedAuthenticate = (connected) => {
     const authenticateBtn = document.getElementById("authenticate");
 
@@ -42,6 +48,35 @@ const newUser = () => {
 
       // ?????????????????
     });
+}
+
+const testing = () => {
+    const subject = document.getElementById(subjectElementId).value;
+    stompClient.subscribe(`/topic/response.${subject}`, (text) => showTestTable(JSON.parse(text.body)));
+
+}
+
+const showTestTable = (test) => {
+    const testTable = document.getElementById(testTableElementId);
+
+    let questionRow = testTable.insertRow(-1);
+    let questionCell = questionRow.insertCell(0);
+    let question = document.createTextNode(test.text);
+    questionCell.appendChild(question);
+
+   // как реализовать вывод вопроса и 4х вариантов ответа, ума не приложу
+    let answerRow = testTable.insertRow(0);
+    let answerCell = answerRow.insertCell(1);
+    let answer = document.createTextNode(test.text);
+    answerCell.appendChild(answer);
+}
+
+const addTest = () => {
+    const subjectNewTest = document.getElementById(subjectNewTestElementId).value;
+    const textNewTest = document.getElementById(textNewTestElementId).value;
+
+    // как получить массив ответов?????
+
 }
 
 const logout = () => {
