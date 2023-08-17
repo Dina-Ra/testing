@@ -30,7 +30,6 @@ create table answer (
     answerId_id                 bigserial not null constraint answer_pk primary key,
     text                        varchar(512) not null ,
     point                       integer not null,
-    is_true                     boolean not null,
     test_key                    bigint not null
 );
 alter table answer add foreign key (test_key) references test;

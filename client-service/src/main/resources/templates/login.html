@@ -13,7 +13,13 @@
 <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
     enabled. Please enable
     Javascript and reload this page!</h2></noscript>
-
+<input id="logout" type="button" value="Выход" onclick="logout()">
+</br>
+</br>
+</br>
+<!--регистрация или вход-->
+<!--при регистрации не требует повторного входа-->
+<!--при авторизации админ автомат переходит на страницу addTest.html-->
 <div id="main-content" class="container">
     <div class="row">
         <div class="col-1">
@@ -23,12 +29,36 @@
             <input type="text" id="password" class="form-control" placeholder="password">
         </div>
         <div class="col-1">
-            <button id="authenticate" class="btn btn-default" onclick="authenticate()">Authenticate</button>
+            <button id="authenticate" class="btn btn-default" onclick="authenticate()">Вход</button>
+            <button id="newUser" class="btn btn-default" onclick="newUser()">Регистрация</button>
         </div>
     </div>
 </div>
 
+
 </br>
-<input type="button" value="New user" onclick="window.location.href = '/newUser'">
+</br>
+</br>
+<!--при удачной регистрации или входа в таблице получаю данные прошлых проверок-->
+<!--не доступно админу-->
+<div class="row">
+    <div class="col-12">
+        <table id="verifications" border="1px">
+            <thead>
+            <tr>
+                <th>Предмет</th>
+                <th>Дата тестирования</th>
+                <th>Результат тестирования</th>
+            </tr>
+            </thead>
+            <tbody id="verificationsTable"></tbody>
+        </table>
+    </div>
+</div>
+</br>
+</br>
+<!--иду на страничку testing.html пройти новую проверку-->
+<!--не доступно админу-->
+<input type="button" value="Пройти тестирование" onclick="window.location.href = '/testing'">
 </body>
 </html>

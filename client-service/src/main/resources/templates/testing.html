@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/login.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+
+
+<!--не доступно админу-->
+<!--выбирать предмет, отправить на контроллер, должна получить список рандомных тестов по предмету (таблица testTable)-->
+
+<h3>Тестирование</h3>
+
+<div id="main-content">
+    <select size="1" name="name">
+        <option selected="selected" value="1">Математика</option>
+        <option value="2">Информатика</option>
+    </select>
+    <div class="col-1">
+        <button id="testing" class="btn btn-default" onclick="testing()">Выбрать предмет</button>
+    </div>
+</div>
+
+
+</br>
+</br>
+</br>
+<div class="row">
+    <table id="" style="width: 672px;" border="1">
+        <thead>
+        <tr>
+            <th style="width: 60%;">Вопрос</th>
+            <th style="width: 40%;">Ответы</th>
+        </tr>
+        </thead>
+
+        <tbody id="testTable">
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</br>
+</br>
+</br>
+<input id="logout" type="button" value="Выход" onclick="logout()">
+</body>
+</html>

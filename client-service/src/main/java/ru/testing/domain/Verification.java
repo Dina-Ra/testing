@@ -1,4 +1,6 @@
 package ru.testing.domain;
 
-public record Verification(Integer result) {
+import java.time.LocalDate;
+
+public record Verification(Integer result, LocalDate createDate, String subjectName) {
 }

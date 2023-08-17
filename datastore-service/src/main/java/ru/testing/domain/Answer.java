@@ -12,15 +12,13 @@ public class Answer {
     private final Long answerId;
     private final String text;
     private final Integer point;
-    private final boolean isTrue;
     private final Long testKey;
 
     @PersistenceCreator
-    public Answer(Long answerId, String text, Integer point, boolean isTrue, Long testKey) {
+    public Answer(Long answerId, String text, Integer point, Long testKey) {
         this.answerId = answerId;
         this.text = text;
         this.point = point;
-        this.isTrue = isTrue;
         this.testKey = testKey;
     }
 }
